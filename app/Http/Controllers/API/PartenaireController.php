@@ -23,4 +23,9 @@ class PartenaireController extends Controller
         $newPartenaire = $this->partenaireService->create($data->toArray());
         return response()->json($newPartenaire);
     }
+
+    public function getOne(int $id): JsonResponse
+    {
+        return response()->json($this->partenaireService->getOne($id));
+    }
 }

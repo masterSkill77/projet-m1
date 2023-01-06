@@ -32,4 +32,5 @@ Route::prefix('/evenement')->group(function () {
 Route::prefix('/partenaire')->group(function () {
     Route::get('/', [PartenaireController::class, 'getAll']);
     Route::post('/', [PartenaireController::class, 'createPartenaire']);
+    Route::get('/{id}', [PartenaireController::class, 'getOne']);
 });

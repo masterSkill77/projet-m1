@@ -22,4 +22,8 @@ class PartenaireService
         $partenaire->save();
         return $partenaire;
     }
+    public function getOne(int $id): Partenaire | null
+    {
+        return $this->partenaireModel::findOrFail($id);
+    }
 }
