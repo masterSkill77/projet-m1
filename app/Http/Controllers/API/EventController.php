@@ -38,4 +38,15 @@ class EventController extends Controller
         }
         return response()->json($this->eventService->getByEventDate($date));
     }
+    public function getEventBetweenDate(string $startDate, string $endDate): JsonResponse
+    {
+        $validation = Validator::make(['startDate' => $startDate, 'endDate' => $endDate], [
+            'startDate' => 'required|date',
+            'endDate' => 'required|date',
+        ]);
+        if ($validation->fails()) {
+            return response()->json([$validation->errors()], 400);
+        }
+        return response()->json($this->eventService->getEventBetweenDate($startDate, $endDate));
+    }
 }

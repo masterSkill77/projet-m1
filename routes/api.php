@@ -25,4 +25,5 @@ Route::prefix('/evenement')->group(function () {
     Route::post('/', [EventController::class, 'createEvent']);
     Route::get('/type/{idType}', [EventController::class, 'getEventByType']);
     Route::get('date/{date}', [EventController::class, 'getEventByDate']);
+    Route::get('between-date/{date_start}/{date_end}', [EventController::class, 'getEventBetweenDate']);
 });

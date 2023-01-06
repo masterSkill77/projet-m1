@@ -24,6 +24,12 @@ class EventService
         return $this->eventModel::with('event_type')->where('event_start', '=', $event_start)->get();
     }
 
+    public function getEventBetweenDate(string $event_start, string $event_end): Collection
+    {
+        return $this->eventModel::with('event_type')->where('event_start', '>=', $event_start)->where('event_end', '<=', $event_end)->get();
+    }
+
+
     public function createEvent($data): Event
     {
         $event = new Event($data);
