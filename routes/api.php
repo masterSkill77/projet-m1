@@ -23,4 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('/evenement')->group(function () {
     Route::get('/', [EventController::class, 'getAll']);
     Route::post('/', [EventController::class, 'createEvent']);
+    Route::get('/type/{idType}', [EventController::class, 'getEventByType']);
 });
