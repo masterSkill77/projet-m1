@@ -16,7 +16,7 @@ class EventService
     }
     public function getByEventType(int $event_type): Collection
     {
-        return $this->eventModel::with('event_type')->where('event_type', '==', $event_type)->get();
+        return $this->eventModel::with('event_type')->where('event_type', '=', $event_type)->get();
     }
 
     public function createEvent($data): Event
