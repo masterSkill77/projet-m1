@@ -19,6 +19,11 @@ class EventService
         return $this->eventModel::with('event_type')->where('event_type', '=', $event_type)->get();
     }
 
+    public function getByEventDate(string $event_start): Collection
+    {
+        return $this->eventModel::with('event_type')->where('event_start', '=', $event_start)->get();
+    }
+
     public function createEvent($data): Event
     {
         $event = new Event($data);
