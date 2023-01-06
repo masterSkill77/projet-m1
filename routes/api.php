@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\EventController;
+use App\Http\Controllers\API\PartenaireController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,9 @@ Route::prefix('/evenement')->group(function () {
     Route::get('/type/{idType}', [EventController::class, 'getEventByType']);
     Route::get('date/{date}', [EventController::class, 'getEventByDate']);
     Route::get('between-date/{date_start}/{date_end}', [EventController::class, 'getEventBetweenDate']);
+});
+
+Route::prefix('/partenaire')->group(function () {
+    Route::get('/', [PartenaireController::class, 'getAll']);
+    Route::post('/', [PartenaireController::class, 'createPartenaire']);
 });
