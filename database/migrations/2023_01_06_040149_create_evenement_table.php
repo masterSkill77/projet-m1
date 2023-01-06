@@ -14,7 +14,7 @@ class CreateEvenementTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('evenement', function (Blueprint $table) {
+        Schema::create('evenements', function (Blueprint $table) {
             $table->id();
             $table->string('event_name');
             $table->string('event_description');

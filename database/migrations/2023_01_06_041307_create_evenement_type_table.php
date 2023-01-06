@@ -13,7 +13,7 @@ class CreateEvenementTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('evenement_type', function (Blueprint $table) {
+        Schema::create('evenement_types', function (Blueprint $table) {
             $table->id();
             $table->string("event_type");
             $table->timestamps();
