@@ -23,7 +23,7 @@ class CreateEvenementTable extends Migration
             $table->string("event_location");
 
             $table->unsignedBigInteger('event_type');
-            $table->foreign('event_type')->on('evenement_type')->references('id');
+            $table->foreign('event_type')->on('evenement_types')->references('id');
         });
     }
 
