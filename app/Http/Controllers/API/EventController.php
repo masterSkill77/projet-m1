@@ -23,4 +23,8 @@ class EventController extends Controller
         $newEvent = $this->eventService->createEvent($createData->toArray());
         return response()->json($newEvent);
     }
+    public function getEventByType(int $type): JsonResponse
+    {
+        return response()->json($this->eventService->getByEventType($type));
+    }
 }
