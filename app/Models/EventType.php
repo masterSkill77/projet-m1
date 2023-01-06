@@ -10,9 +10,10 @@ class EventType extends Model
 {
     use HasFactory;
 
-    protected $table = 'evenement_types';
-    public function evenements(): HasMany
-    {
-        return $this->hasMany(Event::class, 'event_type');
-    }
+    public $table = 'evenement_types';
+    public $fillable = ['event_type'];
+    // public function event(): HasMany
+    // {
+    //     return $this->hasMany(Event::class, 'event_type');
+    // }
 }
