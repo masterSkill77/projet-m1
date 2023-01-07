@@ -18,6 +18,8 @@ class CreateInformationsTable extends Migration
             $table->string('info_libelle');
             $table->text('info_description');
             $table->string('info_arrete_min')->nullable();
+            $table->unsignedBigInteger('info_type');
+            $table->foreign('info_type')->on('information_types')->references('info_type');
             $table->timestamps();
         });
     }

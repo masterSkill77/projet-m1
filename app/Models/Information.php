@@ -10,6 +10,8 @@ class Information extends Model
 {
     use HasFactory;
 
+    public $table = 'informations';
+
     protected $fillable = ['info_libelle', 'info_description', 'info_arrete_min'];
 
     public function medias(): HasMany
