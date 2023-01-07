@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Information;
 use App\Models\InformationType;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 class InformationService extends Service
 {
@@ -41,6 +42,12 @@ class InformationService extends Service
 
     public function create(array $data): Information
     {
-        return new Information();
+
+        $newInfo = new Information($data);
+        $newInfo->save();
+        if ($data['file']) {
+            $this->mediaService->create($data['file'], $newInfo->id);
+        }
+        return $newInfo;
     }
 }

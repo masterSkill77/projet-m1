@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class InformationFactory extends Factory
+class InformationTypeFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,9 +14,7 @@ class InformationFactory extends Factory
     public function definition()
     {
         return [
-            'info_libelle' => $this->faker->company(),
-            'info_description' => $this->faker->paragraph(),
-            'info_type' => 1
+            'type' => $this->faker->company()
         ];
     }
 }

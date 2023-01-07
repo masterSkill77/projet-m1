@@ -13,13 +13,14 @@ class CreateInformationsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
             $table->string('info_libelle');
             $table->text('info_description');
             $table->string('info_arrete_min')->nullable();
             $table->unsignedBigInteger('info_type');
-            $table->foreign('info_type')->on('information_types')->references('info_type');
+            $table->foreign('info_type')->on('information_types')->references('id');
             $table->timestamps();
         });
     }
