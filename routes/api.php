@@ -4,7 +4,7 @@ use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\InformationTypeController;
 use App\Http\Controllers\API\OffreController;
 use App\Http\Controllers\API\PartenaireController;
-use App\Http\Controllers\InformationController;
+use App\Http\Controllers\API\InformationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -47,11 +47,12 @@ Route::prefix('/offre')->group(function () {
 
 
 Route::prefix('/information')->group(function () {
-    Route::get('/', [InformationController::class, 'getAll']);
-    Route::post('/', [InformationController::class, 'createOffre']);
+    Route::get('/', [InformationTypeController::class, 'getAll']);
+    Route::post('/', [InformationController::class, 'createInfo']);
     Route::get('/{id}', [InformationController::class, 'getOne']);
 });
 
 Route::prefix('/information-type')->group(function () {
     Route::get('/', [InformationTypeController::class, 'getAllType']);
+    Route::post('/', [InformationTypeController::class, 'createType']);
 });
