@@ -15,10 +15,15 @@ class InformationController extends Controller
 
     public function getAll(): JsonResponse
     {
-        return response()->json($this->informationService->getAllInfo());
+        return response()->json($this->informationService->getAll());
     }
     public function getOne(int $id): JsonResponse
     {
         return response()->json($this->informationService->getOne($id));
+    }
+
+    public function getInfoByType(int $idType): JsonResponse
+    {
+        return response()->json($this->informationService->getInfoByType($idType));
     }
 }
