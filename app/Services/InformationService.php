@@ -14,12 +14,12 @@ class InformationService extends Service
     }
     public function getAll(): Collection
     {
-        return $this->informationModel::with('medias')->get();
+        return $this->informationModel::with(['medias', 'type'])->get();
     }
 
     public function getOne(int $id): Information
     {
-        return $this->informationModel::with('medias')->findOrFail($id);
+        return $this->informationModel::with(['medias', 'type'])->findOrFail($id);
     }
 
     public function createType(string $type): InformationType
