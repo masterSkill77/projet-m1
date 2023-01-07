@@ -47,7 +47,7 @@ Route::prefix('/offre')->group(function () {
 
 
 Route::prefix('/information')->group(function () {
-    Route::get('/', [InformationTypeController::class, 'getAll']);
+    Route::get('/', [InformationController::class, 'getAll']);
     Route::post('/', [InformationController::class, 'createInfo']);
     Route::get('/{id}', [InformationController::class, 'getOne']);
     Route::get('/type/{id}', [InformationController::class, 'getInfoByType']);
