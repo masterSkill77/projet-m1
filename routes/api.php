@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\EventController;
 use App\Http\Controllers\API\OffreController;
 use App\Http\Controllers\API\PartenaireController;
+use App\Http\Controllers\InformationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,4 +42,11 @@ Route::prefix('/offre')->group(function () {
     Route::get('/', [OffreController::class, 'getAll']);
     Route::post('/', [OffreController::class, 'createOffre']);
     Route::get('/{id}', [OffreController::class, 'getOne']);
+});
+
+
+Route::prefix('/information')->group(function () {
+    Route::get('/', [InformationController::class, 'getAll']);
+    Route::post('/', [InformationController::class, 'createOffre']);
+    Route::get('/{id}', [InformationController::class, 'getOne']);
 });
