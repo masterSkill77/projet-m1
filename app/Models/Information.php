@@ -13,7 +13,7 @@ class Information extends Model
 
     public $table = 'informations';
 
-    protected $fillable = ['info_libelle', 'info_description', 'info_arrete_min'];
+    protected $fillable = ['info_libelle', 'info_description', 'info_arrete_min', 'info_type'];
 
     public function medias(): HasMany
     {
