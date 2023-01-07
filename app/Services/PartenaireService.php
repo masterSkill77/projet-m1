@@ -24,6 +24,6 @@ class PartenaireService
     }
     public function getOne(int $id): Partenaire | null
     {
-        return $this->partenaireModel::findOrFail($id);
+        return $this->partenaireModel::with('offres')->findOrFail($id);
     }
 }
