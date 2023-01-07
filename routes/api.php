@@ -50,6 +50,7 @@ Route::prefix('/information')->group(function () {
     Route::get('/', [InformationTypeController::class, 'getAll']);
     Route::post('/', [InformationController::class, 'createInfo']);
     Route::get('/{id}', [InformationController::class, 'getOne']);
+    Route::get('/type/{id}', [InformationController::class, 'getInfoByType']);
 });
 
 Route::prefix('/information-type')->group(function () {
