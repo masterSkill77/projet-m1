@@ -30,6 +30,6 @@ class DatabaseSeeder extends Seeder
         InformationType::factory(4)->create();
         Information::factory(5)->create();
         Media::factory(10)->create();
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
     }
 }

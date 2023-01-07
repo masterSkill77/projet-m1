@@ -5,6 +5,7 @@ use App\Http\Controllers\API\InformationTypeController;
 use App\Http\Controllers\API\OffreController;
 use App\Http\Controllers\API\PartenaireController;
 use App\Http\Controllers\API\InformationController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +55,8 @@ Route::prefix('/information')->group(function () {
 });
 
 Route::prefix('/information-type')->group(function () {
-    Route::get('/', [InformationTypeController::class, 'getAllType']);
-    Route::post('/', [InformationTypeController::class, 'createType']);
+    Route::get('/', [InformationTypeController::class, 'getAllType'])->middleware('auth:sanctum');
+    Route::post('/', [InformationTypeController::class, 'createType'])->middleware('auth:sanctum');
 });
+
+Route::post('/login', LoginController::class);
