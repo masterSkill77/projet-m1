@@ -10,8 +10,14 @@ import VueToast from "vue-toast-notification";
 
 const axios = require("./plugins/axios");
 const router = require("./router/index").default;
+import VueGoodTablePlugin from "vue-good-table";
+import "vue-good-table/dist/vue-good-table.css";
 import "vue-toast-notification/dist/theme-sugar.css";
 window.Vue = require("vue").default;
+
+// import the styles
+
+Vue.use(VueGoodTablePlugin);
 Vue.use(VueToast);
 /**
  * The following block of code may be used to automatically register your
