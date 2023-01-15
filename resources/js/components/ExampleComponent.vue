@@ -1,9 +1,11 @@
 <template>
-    <div class="container">
-        <router-view></router-view>
-    </div>
+    <div class="container"></div>
 </template>
 
 <script>
-export default {};
+export default {
+    async mounted() {
+        axios.get("/");
+    },
+};
 </script>
