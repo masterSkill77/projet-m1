@@ -1,39 +1,20 @@
 <template>
     <div class="navbar-nav w-100">
-        <router-link to="/" class="nav-item nav-link"
+        <router-link to="/" class="nav-item nav-link" exact
             ><i class="fa fa-tachometer-alt me-2"></i>Home</router-link
         >
-        <div class="nav-item dropdown">
-            <router-link to="/partenaire" class="nav-link"
-                ><i class="fa fa-laptop me-2"></i>Partenaires</router-link
-            >
-        </div>
-        <a href="widget.html" class="nav-item nav-link active"
-            ><i class="fa fa-th me-2"></i>Widgets</a
+        <router-link to="/event" class="nav-item nav-link" exact
+            ><i class="fa fa-th me-2"></i>Evenements</router-link
         >
-        <a href="form.html" class="nav-item nav-link"
-            ><i class="fa fa-keyboard me-2"></i>Forms</a
+        <router-link to="/info" class="nav-item nav-link" exact
+            ><i class="fa fa-keyboard me-2"></i>Informations</router-link
         >
-        <a href="table.html" class="nav-item nav-link"
-            ><i class="fa fa-table me-2"></i>Tables</a
+        <router-link to="/offre" class="nav-item nav-link" exact
+            ><i class="fa fa-table me-2"></i>Offres</router-link
         >
-        <a href="chart.html" class="nav-item nav-link"
-            ><i class="fa fa-chart-bar me-2"></i>Charts</a
+        <router-link to="/partenaire" class="nav-link" exact
+            ><i class="fa fa-laptop me-2"></i>Partenaires</router-link
         >
-        <div class="nav-item dropdown">
-            <a
-                href="#"
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                ><i class="far fa-file-alt me-2"></i>Pages</a
-            >
-            <div class="dropdown-menu bg-transparent border-0">
-                <a href="signin.html" class="dropdown-item">Sign In</a>
-                <a href="signup.html" class="dropdown-item">Sign Up</a>
-                <a href="404.html" class="dropdown-item">404 Error</a>
-                <a href="blank.html" class="dropdown-item">Blank Page</a>
-            </div>
-        </div>
     </div>
 </template>
 

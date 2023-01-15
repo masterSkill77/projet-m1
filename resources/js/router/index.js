@@ -31,7 +31,7 @@ const routes = [
 const router = new VueRouter({
     mode: "history",
     routes,
-    linkActiveClass: "",
+    linkActiveClass: "active",
 });
 
 router.beforeEach(AuthGuard);
