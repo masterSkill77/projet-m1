@@ -1,11 +1,11 @@
 <template>
-    <div>I'm a login page</div>
+    <div>I'm the main dashboard</div>
 </template>
 
 <script>
 export default {
     mounted() {
-        console.log("Login");
+        console.log("Admin");
     },
 };
 </script>

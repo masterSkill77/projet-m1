@@ -1,10 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import AuthGuard from "./../services/AuthService";
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: "/",
+        path: "/admin",
+        name: "Home",
+        component: require("./../components/admin/DashboardComponent").default,
+    },
+    {
+        path: "/login",
         name: "Login",
         component: require("./../components/LoginComponent").default,
     },
@@ -15,4 +21,5 @@ const router = new VueRouter({
     routes,
 });
 
+router.beforeEach(AuthGuard);
 export default router;
