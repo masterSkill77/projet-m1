@@ -2,20 +2,22 @@
 
 `composer install`
 
-# Copy .env.exampl into .env file
+# Copy .env.example into .env file
 
-# Generate key
-
-`php artisan key:generate`
-
-# Run migration
-
-`php artisan migrate`
-
-# Run seeder
-
-`php artisan db:seed`
+`php artisan init:app`
 
 # Take one email in users table and the password is 'password'
+
+# Install packages
+
+`npm install`
+
+# Install packages
+
+`npm run dev`
+
+# Install packages
+
+`npm run watch`
 
 # Have fun to code
