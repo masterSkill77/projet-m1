@@ -5,7 +5,11 @@
 <script>
 export default {
     mounted() {
-        console.log("Admin");
+        this.$toast.open({
+            type: "success",
+            message: "Your login has successed, welcome to the app",
+            position: "top-right",
+        });
     },
 };
 </script>

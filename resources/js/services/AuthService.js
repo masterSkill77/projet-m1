@@ -1,13 +1,20 @@
-export default async (to, from, next) => {
-    const isAuthenticated = localStorage.getItem("user_token");
-    if (
-        // make sure the user is authenticated
-        !isAuthenticated &&
-        // ❗️ Avoid an infinite redirect
-        to.name !== "Login"
-    ) {
-        // redirect the user to the login page
-        next({ name: "Login" });
-    }
-    next();
+const axios = require("./../plugins/axios");
+const login = async (email, password) => {
+    return new Promise((resolve, reject) => {
+        axios
+            .post("/login", {
+                email,
+                password,
+            })
+            .then(({ data }) => {
+                const token = data.token;
+                localStorage.setItem(process.env.MIX_TOKEN_NAME, token);
+                resolve(data);
+            })
+            .catch((e) => {
+                reject(e);
+            });
+    });
 };
+
+export default { login };

@@ -6,10 +6,13 @@
 
 require("./bootstrap");
 
+import VueToast from "vue-toast-notification";
+
 const axios = require("./plugins/axios");
 const router = require("./router/index").default;
+import "vue-toast-notification/dist/theme-sugar.css";
 window.Vue = require("vue").default;
-
+Vue.use(VueToast);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
