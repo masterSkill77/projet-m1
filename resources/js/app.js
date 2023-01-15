@@ -7,6 +7,7 @@
 require("./bootstrap");
 
 const axios = require("./plugins/axios");
+const router = require("./router/index").default;
 window.Vue = require("vue").default;
 
 /**
@@ -34,4 +35,5 @@ Vue.component(
 const app = new Vue({
     el: "#app",
     axios,
+    router,
 });
