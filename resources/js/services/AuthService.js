@@ -9,6 +9,10 @@ const login = async (email, password) => {
             .then(({ data }) => {
                 const token = data.token;
                 localStorage.setItem(process.env.MIX_TOKEN_NAME, token);
+                localStorage.setItem(
+                    process.env.MIX_USER_KEY,
+                    JSON.stringify(data.user)
+                );
                 resolve(data);
             })
             .catch((e) => {
