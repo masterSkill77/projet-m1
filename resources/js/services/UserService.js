@@ -2,4 +2,8 @@ const me = () => {
     return JSON.parse(localStorage.getItem(process.env.MIX_USER_KEY));
 };
 
-export default me;
+console.log(me());
+
+const isAuthenticated = me();
+
+export default { me, isAuthenticated };

@@ -14,7 +14,11 @@
             </div>
         </div>
         <!-- Spinner End -->
-        <div v-if="user" class="sidebar pe-4 pb-3" :class="open ? 'open' : ''">
+        <div
+            v-if="isAuthenticated"
+            class="sidebar pe-4 pb-3"
+            :class="open ? 'open' : ''"
+        >
             <nav class="navbar bg-secondary navbar-dark">
                 <router-link to="/" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary">
@@ -34,7 +38,9 @@
                         ></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">{{ user.name }}</h6>
+                        <h6 class="mb-0">
+                            {{ isAuthenticated ? user.name : "" }}
+                        </h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -43,6 +49,7 @@
         </div>
         <div class="content" :class="open ? 'open' : ''">
             <nav
+                v-if="isAuthenticated"
                 class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0"
             >
                 <router-link to="/" class="navbar-brand d-flex d-lg-none me-4">
@@ -180,7 +187,7 @@
                                 style="width: 40px; height: 40px"
                             />
                             <span class="d-none d-lg-inline-flex">{{
-                                user.name
+                                isAuthenticated ? user.name : ""
                             }}</span>
                         </a>
                         <div
@@ -210,12 +217,14 @@ export default {
     },
     data() {
         return {
-            user,
+            isAuthenticated: false,
             open: false,
+            user: {},
         };
     },
     mounted() {
-        this.user = user();
+        this.isAuthenticated = user.isAuthenticated;
+        this.user = user.me();
     },
 };
 </script>
