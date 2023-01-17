@@ -209,6 +209,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Menu from "./widgets/Menu.vue";
 import user from "./../services/UserService";
 export default {
@@ -217,6 +218,12 @@ export default {
     },
     data() {
         return {
+            ...mapState([
+                "user",
+                {
+                    user: (state) => state.user,
+                },
+            ]),
             isAuthenticated: false,
             open: false,
             user: {},

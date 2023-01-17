@@ -57,7 +57,7 @@
                             <a href="">Forgot Password</a>
                         </div>-->
                         <button
-                            @click.prevent="login"
+                            @click.prevent="loginUser"
                             class="btn btn-primary py-3 w-100 mb-4"
                         >
                             Sign In
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import AuthService from "./../services/AuthService";
+import { mapActions } from "vuex";
 export default {
     data() {
         return {
@@ -80,10 +80,11 @@ export default {
         };
     },
     methods: {
-        async login() {
-            AuthService.login(this.email, this.password)
+        ...mapActions("user", ["login"]),
+        async loginUser() {
+            this.login({ email: this.email, password: this.password })
                 .then((data) => {
-                    this.$router.push("/admin");
+                    // this.$router.push("/admin");
                 })
                 .catch((e) => {
                     this.$toast.open({

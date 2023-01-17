@@ -10,6 +10,7 @@ import VueToast from "vue-toast-notification";
 
 const axios = require("./plugins/axios");
 const router = require("./router/index").default;
+const store = require("./store/index").default;
 import VueGoodTablePlugin from "vue-good-table";
 import "vue-good-table/dist/vue-good-table.css";
 import "vue-toast-notification/dist/theme-sugar.css";
@@ -45,4 +46,5 @@ const app = new Vue({
     el: "#app",
     axios,
     router,
+    store,
 });
